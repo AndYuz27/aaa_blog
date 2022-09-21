@@ -6,8 +6,8 @@
 	"scripts": {
 		"editorconfig": "editorconfig-checker",
 		"test": "npm run editorconfig",
-		"build:prod": "rimraf ./dist && webpack --mode production --config webpack.config.js",
-		"build:dev": "rimraf ./dist && webpack --mode development --config webpack.config.js",
+		"build:prod": "rimraf ./docs && webpack --mode production --config webpack.config.js",
+		"build:dev": "rimraf ./docs && webpack --mode development --config webpack.config.js",
 		"start": "webpack serve"
 	},
 	"dependencies": {

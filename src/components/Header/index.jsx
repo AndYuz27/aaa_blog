@@ -1,13 +1,11 @@
 import React from "react";
-import "./style.css"
+import "./style.css";
 
 export default () => {
-    return( <header>
+    return <header>
         <a href="/" className="header__logo">DevsBlog</a>
         <nav className="header__menu">
-            <a href="/" className="header__btn"></a>
+            <a href="/" className="header__btn">Create post</a>
         </nav>
     </header>
-    )
 }
-
