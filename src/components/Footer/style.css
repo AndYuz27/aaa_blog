@@ -5,6 +5,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 5px 0 #0003;
+    background-color:  lightblue;
 }
 @media (min-width: 1260px) {
     footer {

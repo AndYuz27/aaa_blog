@@ -16,7 +16,7 @@ let text = `Село Новый Урень основано в 1801 году г�
 
 export default ({data}) => {
     return <main>
-        <h1>Devs Blog</h1>
+        {/* <h1>Devs Blog</h1>
         <div className="cards">
             {data.map(post => <div 
                 className="post" 
@@ -40,6 +40,6 @@ export default ({data}) => {
                     }
                 })}
             </div>)}
-        </div>
+        </div> */}
     </main>
 }
