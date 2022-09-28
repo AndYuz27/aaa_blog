@@ -1,30 +1,40 @@
 import React, {useState, useContext} from "react";
 import {Ctx} from "../../App";
 import "./style.css";
-
+import Api from "../../api";
 export default ({state, auth, updState}) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [pwd, setPwd] = useState("");
     const [pwd2, setPwd2] = useState("");
     const [authType, setAuthType] = useState(auth);
-    const {db, updDb, updUName, updUId} = useContext(Ctx);
+    const {db, updDb, updUName, updUId, Api} = useContext(Ctx);
 
     const handler = e => {
         e.preventDefault();
         if (authType) {
-            let user = db.filter(rec => rec.email === email && rec.pwd === pwd)[0];
-            if (user) {
-                updUName(user.name);
-                updUId(db.findIndex(rec => rec.email === email && rec.pwd === pwd));
+
+            Api.signUp({
+                email:email,
+                password: pwd
+            }).then(res => res.json()).then(data => {
+                console.log(data.message);
                 setEmail("");
                 setName("");
                 setPwd("");
                 setPwd2("");
                 updState(false);
-            } else {
-                alert("Неверные данные пользователя");
-            }
+                setAuthType(auth);
+            })
+            // let user = db.filter(rec => rec.email === email && rec.pwd === pwd)[0];
+            // if (user) {
+                // updUName(user.name);
+                // updUId(db.findIndex(rec => rec.email === email && rec.pwd === pwd));
+
+
+            // } else {
+            //     alert("Неверные данные пользователя");
+            // }
         } else {
             let index = db.findIndex(rec => rec.email === email);
             if (index === -1) {
@@ -47,6 +57,8 @@ export default ({state, auth, updState}) => {
                 setPwd("");
                 setPwd2("");
                 updState(false);
+                setAuthType(auth);
+
             } else {
                 alert("Такой пользователь уже есть");
             }
@@ -107,6 +119,7 @@ export default ({state, auth, updState}) => {
                 setName("");
                 setPwd("");
                 setPwd2("");
+                setAuthType(auth);
             }}>close</button>
             <button type="button" onClick={changeAuthType}>{authType ? "Зарегистрироваться" : "Войти"}</button>
         </div>

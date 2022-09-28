@@ -1,8 +1,4 @@
 class Api {
-    static getWord() {
-        return this.url
-    }
-    static ololo = "=)"
     constructor() {
         this.url = "https://ithub-blog.herokuapp.com/api/"
     }
