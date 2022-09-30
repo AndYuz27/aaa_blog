@@ -20,7 +20,7 @@ input{
 .submit{
     width: 115px;
     height: 50px;
-    background-color: #1c87c9;
-    color:#ffffff;
+    background-color: greenyellow;
+    color:#000;
     cursor: pointer;
 }

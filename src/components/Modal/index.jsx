@@ -75,12 +75,7 @@ export default ({state, auth, updState}) => {
         <div className="modal">
             <h2>{authType ? "Вход" : "Регистрация"}</h2>
             <form onSubmit={handler}>
-                {/* 
-                    Почта - уникальный логин
-                    Имя (регистрация)
-                    Пароль
-                    Повторить пароль (регистрация)
-                */}
+
                 <input
                     className="auth-reg-input"
                     type="email"

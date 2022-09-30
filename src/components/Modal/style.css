@@ -12,14 +12,14 @@
 .modal {
   background-color: #fff;
   padding: 20px;
-  width: 20%;
+  width: 400px;
   border-radius: 10px;
 }
 [type="submit"]{
   width: 85%;
   margin: 5px;
-  background-color: rgb(26, 151, 224);
-  color: white;
+  background-color: greenyellow;
+  color: black;
   border: none;
   border-radius: 5px;
 
@@ -30,4 +30,13 @@ input{
 }
 .auth-reg-input{
   margin-bottom: 20px;
+  background-color: greenyellow;
+}
+button{
+  width: 85%;
+  margin: 5px;
+  background-color: greenyellow;
+  color: black;
+  border: none;
+  border-radius: 5px;
 }
