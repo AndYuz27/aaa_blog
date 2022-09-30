@@ -1,5 +1,5 @@
 import React, {useState, useContext} from "react";
-import { Ctx } from "../../App";
+import { Ctx } from "../App";
 import "./style.css";
 
 export default ({state, auth, updState}) => {
@@ -8,7 +8,7 @@ export default ({state, auth, updState}) => {
     const [pwd, setPwd] = useState("");
     const [pwd2, setPwd2] = useState("");
     const [authType,setAuthType] = useState(auth);
-    const {db, updDb, updUName, updUId, updUEmail ,api} = useContext(Ctx);
+    const {db, updDb, updUName, updUId,api} = useContext(Ctx);
 
 
     const handler = e => {
@@ -22,15 +22,11 @@ export default ({state, auth, updState}) => {
                 .then(data =>{
                     console.log(data.message);
                     console.log(data);
-                    // console.log(data.data.email);
                     if(data.message === "ok"){
                         updUId(data.data._id);
-                        updUEmail(data.data.email)
                         updUName(data.data.name)
+                        localStorage.setItem("userName", data.data.name)
                         localStorage.setItem("userId", data.data._id)
-                        localStorage.setItem("email", data.data.email)
-                        localStorage.setItem("author", data.data.name)
-                        // localStorage.setDesc("description", data.data.description)
                     }
                     setEmail("");
                     setName("");
@@ -39,14 +35,24 @@ export default ({state, auth, updState}) => {
                     updState(false);
                     setAuthType(auth);
                 });
-
+            // let user = db.filter(rec => rec.email === email && rec.pwd === pwd)[0];
+            // if (user) {
+                // updUName(user.name);
+                // updUId(db.findIndex(rec => rec.email === email && rec.pwd === pwd));
+                // setEmail("");
+                // setName("");
+                // setPwd("");
+                // setPwd2("");
+                // updState(false);
+                // setAuthType(auth);
+            // } else {
+            //     alert("Неверные данные пользователя");
+            // }
         } else {
             api.signUp({
                         name: name,
                         password: pwd,
-                        email: email,
-                        description: description,
-                        img: image
+                        email: email
                     })
                     .then(res => res.json())
                     .then(data =>{
@@ -59,12 +65,34 @@ export default ({state, auth, updState}) => {
                         setName("");
                         setPwd("");
                         setPwd2("");
-                        setdDscr("");
-                        setImg("")
                         updState(false);
                         setAuthType(auth);
                     })
-
+            // let index = db.findIndex(rec => rec.email === email);
+            // if (index === -1) {
+            //     updDb([...db, {
+            //         name: name,
+            //         pwd: pwd,
+            //         email: email
+            //     }])
+            //     localStorage.setItem("db", JSON.stringify([...db, {
+            //         name: name,
+            //         pwd: pwd,
+            //         email: email
+            //     }]))
+            //     updUName(name)
+            //     localStorage.setItem("userName", name);
+            //     updUId(db.length);
+            //     localStorage.setItem("userId", db.length);
+            //     setEmail("");
+            //     setName("");
+            //     setPwd("");
+            //     setPwd2("");
+            //     updState(false);
+            //     setAuthType(auth);
+            // } else {
+            //     alert("Такой пользователь уже есть");
+            // }
         }        
     }
     const changeAuthType = e => setAuthType(!authType)
@@ -129,7 +157,7 @@ export default ({state, auth, updState}) => {
                 setAuthType(auth);
             }}>close</button>
 
-            <button type="button" onClick={changeAuthType}>{authType ? "я хачу Зарегистрироваться" : "я хачу Войти"}</button>
+            <button type="button" onClick={changeAuthType}>{authType ? "Зарегистрироваться" : "Войти"}</button>
 
         </div>
     </div>
