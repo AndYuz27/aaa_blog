@@ -8,8 +8,8 @@ class Api {
     getUser(id) {
         return fetch(`${this.url}users/${id}`)
     }
-    getPersonInfo() { // информация о себе
-        return fetch(`${this.url}users/me`)
+    getPersonInfo(id) { // информация о себе
+        return fetch(`${this.url}users/me/${id}`)
     }
     setPersonInfo(id, body) { // можно поменять имя, описание, изображение
         return fetch(`${this.url}users/update/${id}`, {
