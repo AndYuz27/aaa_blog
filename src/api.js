@@ -1,5 +1,5 @@
 class Api {
-    constructor() {
+    constructor() { 
         this.url = "https://ithub-blog.herokuapp.com/api/"
     }
     getUsers() {

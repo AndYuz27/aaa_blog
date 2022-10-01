@@ -1,13 +1,15 @@
 import axios from "axios";
 
-export const updCat = (id, body) => {
-    axios.put(`${API_URL}/update/${id}`, body).then((res) => {
+export const setPersonInfo = (id, body) => {
+    axios.put(`https://ithub-blog.herokuapp.com/api/users/update/${id}`, body).then((res) => {
         if (res.data.message !== "ok") {
-            alert("РукаЛицо просто **ВАША МОБИЛОЧКА ПРЕВРАТИЛАСЬ В КИРПИЧ ИЗ-ЗА ОШИБКИ**");
+            console.log("Отвал сервера");
         } else {
-            alert(
-                "Паспортные данные вашей кота(кошки) изменены."
+            console.log(
+                "хмм..... Повезло Повезло"
             );
         }
     });
 };
+
+//
