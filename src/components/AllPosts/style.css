@@ -1,6 +1,10 @@
 form {
     width:400px;
 }
+.mmain{
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 input{
     padding:4px 10px;
     border:0;
