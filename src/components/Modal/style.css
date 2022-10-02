@@ -1,10 +1,10 @@
 .modal__container {
   position: fixed;
-  background-color: #0004;
-  top: 0;
-  left: 0;
+  background-color: #0004; 
   right: 0;
   bottom: 0;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
   background-color: #fff;
   padding: 20px;
   width: 400px;
-  border-radius: 10px;
+  margin: 15px;
 }
 [type="submit"]{
   width: 85%;
@@ -25,12 +25,15 @@
 
 }
 input{
+  width: 85%;
+
   padding: 10px 18px;
   margin: 10px;
 }
 .auth-reg-input{
+  width: 85%;
   margin-bottom: 20px;
-  background-color: greenyellow;
+  background-color: lightsalmon;
 }
 button{
   width: 85%;

@@ -1,5 +1,5 @@
 import React,{useContext, useState} from "react";
-import Post from "../Post";
+// import Post from "../Post";
 import "./style.css";
 import {Ctx} from "../../App";
 import {Link} from "react-router-dom"
@@ -10,9 +10,6 @@ export default () => {
 
   // console.log({data})
 
-function alert_tttt(e){
-  alert(e)
-}
 
   return (
     <div>
@@ -23,7 +20,7 @@ function alert_tttt(e){
         <h3>{userEmail}</h3>
         <h3>{userDscr}</h3>
         <Link to="/profile-edit" className="header__btn">
-          All Posts
+          Edit Profile
         </Link>
 
       </div>

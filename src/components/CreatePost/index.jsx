@@ -45,10 +45,10 @@ return (
             <input value={postText} type="text"  className="post-text" placeholder="Пост" onInput={e => setPText(e.target.value)} />
             <br />
             <input value={postImg} id="image" placeholder="Ссылка на изображение" onInput={e => setPImg(e.target.value)}/>
-            <br />
+            {/* <br />
             <span>Видимость</span>
             <input type="radio" /> вижу
-            <input type="radio" /> не вижу
+            <input type="radio" /> не вижу */}
             <br />
             <button type="submit" onClick={addNewPost}>Создать пост</button>
 

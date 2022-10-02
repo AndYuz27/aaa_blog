@@ -8,10 +8,8 @@ form {
 input{
     padding:4px 10px;
     border:0;
-    font-size:24px;
-    box-shadow: 0px 5px 20px #b0b0b0, 
-            -5px -5px 60px #ffffff;
-    border-radius: 5px;
+    font-size:18px;
+
     
 }
 .search {
@@ -39,4 +37,5 @@ input{
     padding-top: 10px;
     align-items: center;
     justify-content: center;
+    border-radius: 15px;
 }

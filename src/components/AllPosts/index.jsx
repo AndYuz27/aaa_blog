@@ -32,10 +32,7 @@ const [apiData, setApiData] = useState([])
 
   return (
     <div>
-      <h1>Все посты</h1>
-      <input type="text" name="text" className="search" placeholder="Найти пост"/>
-      <input type="submit" name="submit" className="submit" value="Найти" />
-      
+      <h1>All Posts</h1>
       <div className="mmain">
         {apiData.map((data) => {
           return ( <div className="pcard">
