@@ -30,7 +30,7 @@ class Api {
     }
     //получить всех пользователи в блоге
     getUsers(){
-        return fetch(`${this.url} users`)
+        return fetch(`${this.url}users`)
     }
     //один пользователь
     getUser(id){

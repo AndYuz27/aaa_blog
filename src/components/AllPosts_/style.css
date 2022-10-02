@@ -24,15 +24,3 @@ input{
     color:#000;
     cursor: pointer;
 }
-.pcard{
-    margin-top: 15px;
-    background-color: gray;
-    width: 382px;
-    height: 400px;
-    color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-    align-items: center;
-    justify-content: center;
-}

@@ -7,6 +7,9 @@
     export default ({state, auth, updState}) => {
 
       const [name, setName] = useState("");
+      const [email, setEmail] = useState("");
+      const [pwd, setPwd] = useState("");
+      const [pwd2, setPwd2] = useState("");
       const [description, setdDscr] = useState("");
       const [image, setImg] = useState("");
       const [authType,setAuthType] = useState(auth);
