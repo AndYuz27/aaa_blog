@@ -65,7 +65,7 @@ export default () => {
               Sign Up
           </Link>}
 
-          {userId && <Link to="/profile" className="header__btn" >{userName}</Link>}
+          {userId && <Link to="/profile" className="header__btn" >Profile: {userName}</Link>}
           {userId && <a href="/" className="header__btn" onClick={logOut}>Log off</a>}
       </nav>
      
