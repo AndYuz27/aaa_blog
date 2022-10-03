@@ -1,28 +1,59 @@
+/* 
+    user{
+        _id: - уникальный ключ пользователя для взаимодействия(+localStorage)
+        name: "" /String
+        password: string,
+        image: string - ссылка на картинку из открытого источника
+        email: string - чувствителен к регистру
+        description string - описание
+        favorites: Array - массив из id любимых постов
+        posts: Array - массив из id своих постов
+    }
+*/
+ /*
+        post {
+            _id: String,
+            title: String,
+            author: String - id автора,
+            image: String - ссылка на картинку,
+            isPublished: Boolean - статус поста (открыт для просмотра / закрыт)
+            tags: [String] - список тегов для фильтрации поста
+            createdAt: Date - дата создания (new Date() ) 2022-09-28T18:20
+            updatedAt: Date
+            likes: [String] - id пользователей
+            comments: [String] - id комментария
+        }
+    */
 class Api {
-    constructor() { 
+    constructor(){
         this.url = "https://ithub-blog.herokuapp.com/api/"
     }
-    getUsers() {
+    //получить всех пользователи в блоге
+    getUsers(){
         return fetch(`${this.url}users`)
     }
-    getUser(id) {
+    //один пользователь
+    getUser(id){
         return fetch(`${this.url}users/${id}`)
     }
-    getPersonInfo(id) { // информация о себе
+    //информация о себе 
+    getPersonInfo(){
         return fetch(`${this.url}users/me/${id}`)
     }
-    setPersonInfo(id, body) { // можно поменять имя, описание, изображение
-        return fetch(`${this.url}users/update/${id}`, {
+    //изменение данных пользователя(имя, описание, изображение) нельзя менять почту и пароль
+    setPersonInfo(id,body){
+        return fetch(`${this.url}users/update/${id}`,{
             method: "PUT",
-            header: {
+            headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(body)
         })
     }
-    signUp(body) { // email и password required!
-        return fetch(`${this.url}users/add`, {
+    //email и password required
+    signUp(body){
+        return fetch(`${this.url}users/add`,{
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -31,8 +62,9 @@ class Api {
             body: JSON.stringify(body)
         })
     }
-    logIn(body) { // email и password only
-        return fetch(`${this.url}users/auth`, {
+     //email и password only
+    logIn(body){
+        return fetch(`${this.url}users/auth`,{
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -77,5 +109,4 @@ class Api {
         })
     }
 }
-
 export default Api;

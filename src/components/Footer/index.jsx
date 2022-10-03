@@ -7,8 +7,8 @@ export default () => {
             &copy;{new Date().getFullYear()}
         </span>
         <span> Made by&nbsp;
-            <a 
-                href="https://github.com/AndYuz27" 
+            <a
+                href="https://github.com/AndYuz27"
                 className="footer__author"
                 target="_blank"
             >AndYuz27</a>
