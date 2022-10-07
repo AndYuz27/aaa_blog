@@ -1,11 +1,12 @@
 footer {
-    height: 90px;
+    height: 110px;
     display: flex;
     padding: 30px;
+    box-shadow: 0 0 5px 0 #0003;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 5px 0 #0003;
-    background-color:  lightblue;
+    background: linear-gradient(45deg,#00ffdd, #5e6cff);
+    margin-top: 35px
 }
 @media (min-width: 1260px) {
     footer {

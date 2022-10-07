@@ -1,5 +1,5 @@
 class Api {
-    constructor() {
+    constructor() { 
         this.url = "https://ithub-blog.herokuapp.com/api/"
     }
     getUsers() {
@@ -39,6 +39,41 @@ class Api {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(body)
+        })
+    }
+    //когда грузится главная страница
+    getPosts(){
+        return fetch(`${this.url}posts`)
+    }
+    //когда я авторизован и хочу добавить пост
+    getPost(id){
+        return fetch(`${this.url}posts/${id}`)
+    }
+    //когда я авторизован и хочу добавить пост 
+    addPost(body){
+        return fetch(`${this.url}posts/add`,{
+            method:"POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+    }
+    //если автор поста - пользователь сайта(я), на странице с постом изменить свой пост 
+    updatePost(id, body) { // если автор поста - пользователь сайта (я), на странице с постом изменять свой пост (можно в личном кабинете).
+        return fetch(`${this.url}posts/update/${id}`, {
+            method: "PUT",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+    }
+    deletePost(id) { // если я авторизован на сайте, можно удалять свой пост
+        return fetch(`${this.url}posts/${id}`, {
+            method: "DELETE"
         })
     }
 }
