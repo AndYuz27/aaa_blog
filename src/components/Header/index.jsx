@@ -27,7 +27,7 @@ export default () => {
 
   return (
     <header>
-      <a href="/" className="header__logo" style={{fontSize: "35px"}}>
+      <a href="/" className="header__logo">
         Andy's Blog ✌
       </a>
 

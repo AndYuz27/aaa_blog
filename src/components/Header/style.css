@@ -12,9 +12,27 @@ header {
     display: flex;
     gap: 20px;
 }
+.header__logo{
+    font-size: 35px;
+}
 @media (min-width: 1260px) {
+
+}
+@media screen and (max-width : 1280px)  {
     header {
         padding-left: calc(50% - 600px);
         padding-right: calc(50% - 600px);
+    }
+}
+@media screen and (max-width : 440px)  {
+    header{
+        padding-left: calc(50% - 180px);
+        padding-right: calc(50% - 180px);
+    }
+    .header__logo{
+        font-size: 16pt;
+    }
+    .header__menu{
+        font-size: 8pt;
     }
 }

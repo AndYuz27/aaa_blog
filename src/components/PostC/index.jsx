@@ -2,7 +2,7 @@ import React,{useContext, useState} from "react";
 // import Post from "../Post";
 import "./style.css";
 import {Ctx} from "../../App";
-import { useParams, Link } from 'react-router-dom';
+import {Link} from "react-router-dom"
 export default () => {
   const [modalView, setModal] = useState(false);
   const [modalAuth, setModalAuth] = useState(true);
