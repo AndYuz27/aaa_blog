@@ -12,4 +12,23 @@ export const setPersonInfo = (id, body) => {
     });
 };
 
-//
+export const eegPosts = async () => {
+    try {
+        const res = await axios.get(`https://ithub-blog.herokuapp.com/api/posts`)
+
+        return res.data.data;
+    } catch (e) {
+        console.log("ERROR")
+    }
+}
+export const delPost = async () => {
+    try {
+        const res = await axios.delete(`https://ithub-blog.herokuapp.com/api/posts`)
+
+        return res.data.data;
+    } catch (e) {
+        console.log("ERROR")
+    }
+}
+
+

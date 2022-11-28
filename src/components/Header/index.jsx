@@ -23,6 +23,8 @@ export default () => {
       updUName("");
       localStorage.removeItem("userId");
       localStorage.removeItem("author");
+      localStorage.removeItem("email")
+      localStorage.setItem("isAuth", false);
     }
 
   return (

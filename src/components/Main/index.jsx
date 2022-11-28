@@ -7,6 +7,7 @@ import CreatePost from "../CreatePost/index.jsx";
 import Profile from "../Profile/index.jsx";
 import ProfileEdit from "../ProfileEdit";
 import { Routes, Route } from "react-router-dom";
+import PostSingle from "../PostSingle";
 
 export default () => {
   return (
@@ -17,6 +18,7 @@ export default () => {
         <Route path="/createpost" element={<CreatePost />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile-edit" element={<ProfileEdit />} />
+        <Route path="/post/:id" element={<PostSingle />} />
       </Routes>
     </main>
   );

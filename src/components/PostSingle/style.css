@@ -67,7 +67,7 @@ input{
     background-size: cover;
     position: relative;
 }
-@media screen and (max-width : 1280px)  {
+/* @media screen and (max-width : 1280px)  {
     .mmain{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -88,8 +88,8 @@ input{
         justify-content: center;
         border-radius: 15px;
     }
-}
-@media screen and (max-width : 440px)  {
+} */
+/* @media screen and (max-width : 440px)  {
     .mmain{
         display: flex;
         flex-direction: column;
@@ -109,4 +109,28 @@ input{
         justify-content: center;
         border-radius: 15px;
     }
+}*/
+.pcard-single{ 
+width: 80%;
+background-color: bisque;
+height: 900px;
+padding: 50px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img_blank-single{
+    width: 800px;
+    height: 600px;
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -6,7 +6,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(45deg,#00ffdd, #5e6cff);
-    margin-top: 35px
+    margin-top: 96vh
 }
 @media (min-width: 1260px) {
     footer {

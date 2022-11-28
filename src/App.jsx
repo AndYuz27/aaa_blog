@@ -12,10 +12,12 @@ export  const App = () => {
   const [userDscr,setUserDscr] = useState(localStorage.getItem("description") || "");
   const [userEmail,setUserEmail] = useState(localStorage.getItem("email") || "");
   const [userImage,setUserImage] = useState(localStorage.getItem("image") || "");
+  const [userPosts,setUserPosts] = useState(localStorage.getItem("posts") || "");
 
   const [postText, setPText] = useState(localStorage.getItem("postText") || "[]");
   const [postTitle, setPTitle] = useState(localStorage.getItem("postTitle") || "");
   const [postImg, setPImg] = useState(localStorage.getItem("postImg") || "");
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
 
   return (
@@ -26,6 +28,7 @@ export  const App = () => {
       userEmail: userEmail,
       userDscr: userDscr,
       userImage: userImage,
+      userPosts: userPosts,
 
       api: new Api(),
       updDb: updDb,
@@ -34,7 +37,9 @@ export  const App = () => {
       updUEmail: setUserEmail,
       updUDscr: setUserDscr,
       updUImage: setUserImage,
-
+      updUPosts: setUserPosts,
+      isAuth: isAuth,
+      setIsAuth: setIsAuth,
 
       //post CRUD
       postTitle: setPTitle,
