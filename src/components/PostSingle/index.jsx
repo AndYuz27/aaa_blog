@@ -2,9 +2,11 @@ import React, { useContext, useState, useEffect } from "react";
 import "./style.css";
 import { useParams, Link } from 'react-router-dom';
 import { Ctx } from "../../App";
-
+import { useNavigate } from "react-router-dom";
 
 export default ({ post }) => {
+
+    const navigate = useNavigate();
 
     const { userId, api } = useContext(Ctx);
     const [isLoad, setIsLoad] = useState(false);
@@ -26,9 +28,10 @@ export default ({ post }) => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
+                
             })
+            navigate("/")
     };
-
 
 
 
@@ -36,7 +39,7 @@ export default ({ post }) => {
     <div className="pcard-single">
         <section className="post-page">
         <Link className="post-page__link" to="/"> &#10148; Домой</Link>
-            <h1 className="post-page__title">{isLoad && data.title}</h1>
+            { isLoad ? <h1 className="post-page__title">{isLoad && data.title !== null ? data.title :"No Description"}</h1> : console.log("waiting")}
             <div className="post-page__wrapper">
                 <div className="fffddd">
                 {
