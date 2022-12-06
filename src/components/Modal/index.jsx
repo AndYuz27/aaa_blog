@@ -28,7 +28,7 @@ export default ({state, auth, updState}) => {
                         updUName(data.data.name)
                         updUEmail(data.data.email)
                         localStorage.setItem("email", data.data.email)
-                        localStorage.setItem("author", data.data.name)
+                        localStorage.setItem("author", data.data.name);
                         localStorage.setItem("userId", data.data._id)
                         localStorage.setItem("isAuth", true);
                     }
@@ -63,8 +63,11 @@ export default ({state, auth, updState}) => {
                         console.log(data);
                         if(data.message === "ok"){
                             updUId(data.data._id);
+                            localStorage.setItem("author", data.data.name);
+
                             localStorage.setItem("userId", data.data._id)
                             localStorage.setItem("isAuth", true);
+
                         }
                         setEmail("");
                         setName("");

@@ -21,7 +21,7 @@ const [selectedTags, setSelectedTags] = useState([]);
 
 
  useEffect(() => {
-  axios.get(`https://ithub-blog.herokuapp.com/api/posts`)
+  axios.get(`https://srv.petiteweb.dev/api/blog/posts`)
   .then((GetData) => {
     setPosts(GetData.data.data)
     setIsLoad(true);

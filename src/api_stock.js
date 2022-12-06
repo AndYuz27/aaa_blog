@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const setPersonInfo = (id, body) => {
-    axios.put(`https://ithub-blog.herokuapp.com/api/users/update/${id}`, body).then((res) => {
+    axios.put(`https://srv.petiteweb.dev/api/blog/users/update/${id}`, body).then((res) => {
         if (res.data.message !== "ok") {
             console.log("Отвал сервера");
         } else {
@@ -14,7 +14,7 @@ export const setPersonInfo = (id, body) => {
 
 export const eegPosts = async () => {
     try {
-        const res = await axios.get(`https://ithub-blog.herokuapp.com/api/posts`)
+        const res = await axios.get(`https://srv.petiteweb.dev/api/blog/posts`)
 
         return res.data.data;
     } catch (e) {
@@ -23,7 +23,7 @@ export const eegPosts = async () => {
 }
 export const delPost = async () => {
     try {
-        const res = await axios.delete(`https://ithub-blog.herokuapp.com/api/posts`)
+        const res = await axios.delete(`https://srv.petiteweb.dev/api/blog/posts`)
 
         return res.data.data;
     } catch (e) {

@@ -7,7 +7,7 @@ export default () => {
     const [postTitle, setPTitle] = useState("");
     const [postText, setPText] = useState("");
     const [postImg, setPImg] = useState("");
-    const {db, updDb, updPId,updPTitle,updPText,updPImg, api} = useContext(Ctx);
+    const {db, updDb, updPId,updPTitle,updPText,updPImg,userId, api} = useContext(Ctx);
 
 const addNewPost = e => {
   e.preventDefault();
@@ -15,7 +15,8 @@ const addNewPost = e => {
       api.addPost( {
           title: postTitle,
           text: postText,
-          image: postImg
+          image: postImg,
+          author: userId
       })
           .then(res => res.json())
           .then(data => {

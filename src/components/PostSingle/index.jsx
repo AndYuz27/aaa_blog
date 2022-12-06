@@ -21,6 +21,16 @@ export default ({ post }) => {
             });
     }, [data, api, id])
 
+    const handle = () => {
+        api.deletePost(id)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            })
+    };
+
+
+
 
   return (
     <div className="pcard-single">
@@ -33,6 +43,7 @@ export default ({ post }) => {
                     isLoad ? <div className="img_blank-single" style={{backgroundImage: `url(${data.image !== undefined ? data.image : "https://velaxom.ru/assets/images/rasprodazha/kessler-parts/no-image.png"})`}}></div>:console.log("Loading...")
                 }
                 </div>
+                <button className="post-page__modal-btn" onClick={handle}>Delete Post</button>
                 
             </div>
         </section>
