@@ -1,6 +1,7 @@
 import React, {useState, useContext} from "react";
 import { Ctx } from "../../App";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 export default ({state, auth, updState}) => {
     const [name, setName] = useState("");
@@ -10,6 +11,7 @@ export default ({state, auth, updState}) => {
     
     const [authType,setAuthType] = useState(auth);
     const {db, updDb, updUName, updUId,updUEmail, api} = useContext(Ctx);
+    const navigate = useNavigate();
 
 
     const handler = e => {
@@ -39,19 +41,9 @@ export default ({state, auth, updState}) => {
                     updState(false);
                     setAuthType(auth);
                 });
-            // let user = db.filter(rec => rec.email === email && rec.pwd === pwd)[0];
-            // if (user) {
-                // updUName(user.name);
-                // updUId(db.findIndex(rec => rec.email === email && rec.pwd === pwd));
-                // setEmail("");
-                // setName("");
-                // setPwd("");
-                // setPwd2("");
-                // updState(false);
-                // setAuthType(auth);
-            // } else {
-            //     alert("Неверные данные пользователя");
-            // }
+                navigate("/")
+
+
         } else {
             api.signUp({
                         name: name,
@@ -76,31 +68,9 @@ export default ({state, auth, updState}) => {
                         updState(false);
                         setAuthType(auth);
                     })
-            // let index = db.findIndex(rec => rec.email === email);
-            // if (index === -1) {
-            //     updDb([...db, {
-            //         name: name,
-            //         pwd: pwd,
-            //         email: email
-            //     }])
-            //     localStorage.setItem("db", JSON.stringify([...db, {
-            //         name: name,
-            //         pwd: pwd,
-            //         email: email
-            //     }]))
-            //     updUName(name)
-            //     localStorage.setItem("userName", name);
-            //     updUId(db.length);
-            //     localStorage.setItem("userId", db.length);
-            //     setEmail("");
-            //     setName("");
-            //     setPwd("");
-            //     setPwd2("");
-            //     updState(false);
-            //     setAuthType(auth);
-            // } else {
-            //     alert("Такой пользователь уже есть");
-            // }
+                    navigate("/")
+
+
         }        
     }
     const changeAuthType = e => setAuthType(!authType)

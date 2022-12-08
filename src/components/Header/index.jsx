@@ -3,13 +3,13 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import Modal from "../Modal";
 import {Ctx} from "../../App";
-
+import { useNavigate } from "react-router-dom";
 
 export default () => {
     const [modalView, setModal] = useState(false);
     const [modalAuth, setModalAuth] = useState(true);
     const {userId,userName, updUId, updUName,api} = useContext(Ctx);
-
+const navigate = useNavigate()
 
 
     const aa =   api.getUser(userId).then(res => res.json())
@@ -25,6 +25,8 @@ export default () => {
       localStorage.removeItem("author");
       localStorage.removeItem("email")
       localStorage.setItem("isAuth", false);
+      navigate("/")
+
     }
 
   return (

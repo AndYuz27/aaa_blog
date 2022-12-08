@@ -1,6 +1,6 @@
 import React,{useState, useContext} from "react";
 import { Ctx } from "../../App";
-
+import { useNavigate } from "react-router-dom";
 import "./style.css"
 export default () => {
     const [postId,setPostsId] = useState("");
@@ -8,6 +8,8 @@ export default () => {
     const [postText, setPText] = useState("");
     const [postImg, setPImg] = useState("");
     const {db, updDb, updPId,updPTitle,updPText,updPImg,userId, api} = useContext(Ctx);
+    const navigate = useNavigate()
+
 
 const addNewPost = e => {
   e.preventDefault();
@@ -34,6 +36,7 @@ const addNewPost = e => {
               setPTitle("");
               setPText("");
           })
+          navigate("/")
 }
 }
 return (
