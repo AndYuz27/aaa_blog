@@ -25,7 +25,7 @@ const [selectedTags, setSelectedTags] = useState([]);
   .then((GetData) => {
     setPosts(GetData.data.data)
     setIsLoad(true);
-    // console.log("Data Posts",GetData.data.data) //вывод данных на консоль
+    console.log("Data Posts",GetData.data.data) //вывод данных на консоль
   })
  })
 

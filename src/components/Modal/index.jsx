@@ -56,7 +56,7 @@ export default ({state, auth, updState}) => {
                         if(data.message === "ok"){
                             updUId(data.data._id);
                             localStorage.setItem("author", data.data.name);
-
+                            localStorage.setItem("email", data.data.email)
                             localStorage.setItem("userId", data.data._id)
                             localStorage.setItem("isAuth", true);
 
