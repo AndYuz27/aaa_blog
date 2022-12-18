@@ -4,3 +4,35 @@
     background-repeat: no-repeat;
     text-align: center;
 }
+
+.home-page{
+    width: 158.5%;
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-12/1639788489_37-catherineasquithgallery-com-p-rozovii-fon-minimalistichnii-89.jpg);
+    height: 900px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.title_lend{
+    margin: 64px;
+    width: 600px;
+    position: absolute;
+    height: 250px;
+    padding-bottom: 25px;
+
+}
+.lend_hdr{
+    font-size: 56pt;
+}
+.letsgo_btn{
+    
+    border-radius: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24pt;
+    font-weight: bolder;
+    background-color: lime;
+}

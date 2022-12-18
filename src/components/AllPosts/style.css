@@ -28,16 +28,6 @@ input{
 }
 .pcard{
     margin: 15px;
-    background-color: rgb(0, 119, 255);
-    width: 382px;
-    height: 400px;
-    color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    padding-top: 15px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
 }
 .post__btn-like{
     background-color: rgb(0, 119, 255);
@@ -77,7 +67,6 @@ input{
     }
     .pcard{
         margin-top: 15px;
-        background-color: rgb(0, 119, 255);
         width: 282px;
         height: 300px;
         color: whitesmoke;
@@ -98,7 +87,6 @@ input{
     }
     .pcard{
         margin-top: 15px;
-        background-color: rgb(0, 119, 255);
         width: 282px;
         height: 300px;
         color: whitesmoke;

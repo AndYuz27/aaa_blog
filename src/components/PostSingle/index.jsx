@@ -30,7 +30,7 @@ export default ({ post }) => {
                 console.log(data);
                 
             })
-            navigate("/")
+            navigate("/aaa_blog/allposts")
     };
 
 
@@ -38,7 +38,7 @@ export default ({ post }) => {
   return (
     <div className="pcard-single">
         <section className="post-page">
-        <Link className="post-page__link" to="/"> &#10148; Домой</Link>
+        <Link className="post-page__link" to="/aaa_blog/allposts"> &#10148; Домой</Link>
             { isLoad ? <h1 className="post-page__title">{isLoad && data.title !== null ? data.title :"No Description"}</h1> : console.log("waiting")}
             <div className="post-page__wrapper">
                 <div className="fffddd">

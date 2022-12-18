@@ -1,11 +1,13 @@
 header {
     height: 110px;
+    width: 100%;
     display: flex;
     padding: 30px;
     box-shadow: 0 0 5px 0 #0003;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(45deg,#00ffdd, #5e6cff);
+    z-index: 9;
 
 }
 .header__menu {

@@ -13,12 +13,12 @@ export default () => {
   return (
     <main>
       <Routes>
-        <Route exact path="/" element={<Home data={posts} />} />
-        <Route path="/allposts" element={<AllPosts />} />
-        <Route path="/createpost" element={<CreatePost />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile-edit" element={<ProfileEdit />} />
-        <Route path="/post/:id" element={<PostSingle />} />
+        <Route exact path="/aaa_blog" element={<Home data={posts} />} />
+        <Route path="/aaa_blog/allposts" element={<AllPosts />} />
+        <Route path="/aaa_blog/createpost" element={<CreatePost />} />
+        <Route path="/aaa_blog/profile" element={<Profile />} />
+        <Route path="/aaa_blog/profile-edit" element={<ProfileEdit />} />
+        <Route path="/aaa_blog/post/:id" element={<PostSingle />} />
       </Routes>
     </main>
   );

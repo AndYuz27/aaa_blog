@@ -36,7 +36,7 @@ const addNewPost = e => {
               setPTitle("");
               setPText("");
           })
-          navigate("/")
+          navigate("/aaa_blog")
 }
 }
 return (

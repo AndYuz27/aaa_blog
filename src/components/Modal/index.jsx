@@ -29,9 +29,9 @@ export default ({state, auth, updState}) => {
                         updUId(data.data._id);
                         updUName(data.data.name)
                         updUEmail(data.data.email)
-                        localStorage.setItem("email", data.data.email)
                         localStorage.setItem("author", data.data.name);
                         localStorage.setItem("userId", data.data._id)
+                        localStorage.setItem("email", data.data.email)
                         localStorage.setItem("isAuth", true);
                     }
                     setEmail("");
@@ -41,7 +41,7 @@ export default ({state, auth, updState}) => {
                     updState(false);
                     setAuthType(auth);
                 });
-                navigate("/")
+                navigate("/aaa_blog")
 
 
         } else {
@@ -68,7 +68,7 @@ export default ({state, auth, updState}) => {
                         updState(false);
                         setAuthType(auth);
                     })
-                    navigate("/")
+                    navigate("/aaa_blog")
 
 
         }        

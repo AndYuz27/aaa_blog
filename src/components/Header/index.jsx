@@ -25,26 +25,26 @@ const navigate = useNavigate()
       localStorage.removeItem("author");
       localStorage.removeItem("email")
       localStorage.setItem("isAuth", false);
-      navigate("/")
+      navigate("/aaa_blog/")
 
     }
 
   return (
     <header>
-      <a href="/" className="header__logo">
+      <a href="/aaa_blog" className="header__logo">
         Andy's Blog ✌
       </a>
 
       <nav className="header__menu">
-        <Link to="/" className="header__btn">
+        <Link to="/aaa_blog" className="header__btn">
           Main Page
         </Link>
 
-        <Link to="/allposts" className="header__btn">
+        <Link to="/aaa_blog/allposts" className="header__btn">
           All Posts
         </Link>
 
-        {userId && <Link to="/createpost" className="header__btn">
+        {userId && <Link to="/aaa_blog/createpost" className="header__btn">
           Create Post
         </Link>}
 
@@ -69,8 +69,8 @@ const navigate = useNavigate()
               Sign Up
           </Link>}
 
-          {userId && <Link to="/profile" className="header__btn" >Profile: {userName}</Link>}
-          {userId && <a href="/" className="header__btn" onClick={logOut}>Log off</a>}
+          {userId && <Link to="/aaa_blog/profile" className="header__btn" >Profile: {userName}</Link>}
+          {userId && <a href="/aaa_blog" className="header__btn" onClick={logOut}>Log off</a>}
       </nav>
      
       {<Modal state={modalView} auth={modalAuth} updState={setModal}/>}
