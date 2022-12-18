@@ -36,7 +36,7 @@ const addNewPost = e => {
               setPTitle("");
               setPText("");
           })
-          navigate("/aaa_blog")
+          navigate("/aaa_blog/allposts")
 }
 }
 return (
